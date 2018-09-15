@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'profile-page',
+    title: 'Rangga Adhitya Prawira',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -38,6 +38,17 @@ module.exports = {
   srcDir: './src',
   modules: [
     '@nuxtjs/font-awesome',
-  ]
+  ],
+  plugins: [
+    { src: '~/plugins/font-awesome' }
+  ],
+  modules: [
+    '@nuxtjs/axios',
+  ],
+
+  axios: {
+    // proxyHeaders: false
+  }
+
 }
 
