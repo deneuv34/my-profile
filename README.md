@@ -1,5 +1,7 @@
 # profile-page
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/deneuv34/my-profile.svg)](https://greenkeeper.io/)
+
 > Based on Nuxtjs
 
 ## Build Setup
