@@ -11,15 +11,15 @@
                         Software & System Engineer
                     </p>
                     <div class="contact-detail">
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i> deneuv3.4@gmail.com</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +6285-3145-55514</p>
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> Bandung, West Java, Indonesia</p>
+                        <p><font-awesome-icon :icon="['far', 'envelope']" style="font-size: 13px" /> deneuv3.4@gmail.com</p>
+                        <p><font-awesome-icon :icon="['fas', 'mobile']" /> +6285-3145-55514</p>
+                        <p><font-awesome-icon :icon="['fas', 'map-marker-alt']" /> Bandung, West Java, Indonesia</p>
                     </div>
                 </div>
                 <div class="socials">
-                    <a class="github" href="https://github.com/deneuv34" target="_blank"><font-awesome-icon :icon="['fab','github']" style="font-size: 40px; margin: 10px" /></a>
-                    <a class="facebook" href="https://facebook.com/kurai.ikari" target="_blank"><font-awesome-icon :icon="['fab','facebook']" style="font-size: 40px; margin: 10px" /></a>
-                    <a class="linkedin" href="https://linkedin.com/in/ranggaad" target="_blank"><font-awesome-icon :icon="['fab','linkedin']" style="font-size: 40px; margin: 10px" /></a>
+                    <a class="facebook" href="https://facebook.com/kurai.ikari" target="_blank"><font-awesome-icon :icon="['fab','facebook-square']" style="font-size: 40px; margin: 10px" /></a>
+                    <a class="github" href="https://github.com/deneuv34" target="_blank"><font-awesome-icon :icon="['fab','github-alt']" style="font-size: 40px; margin: 10px" /></a>
+                    <a class="linkedin" href="https://linkedin.com/in/ranggaad" target="_blank"><font-awesome-icon :icon="['fab','linkedin-in']" style="font-size: 40px; margin: 10px" /></a>
                 </div>
             </div>
         </div>
@@ -44,14 +44,17 @@
 export default {
     data: function () {
         return  {
-            git: {}
+            git: {
+                followers: 0,
+                public_repos: 0
+            }
         }
     },
     methods: {
         async getData() {
             try {
                 const gitResp = await this.$axios.$get('https://api.github.com/users/deneuv34')
-                this.git = gitResp
+                this.git = {...gitResp}
             } catch(e) {
                 console.log(e)
             }
@@ -69,6 +72,12 @@ export default {
 
 .container {
     display: block;
+    margin-top: 35px;
+}
+.socials {
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 30px;
 }
 h2 {
     color: #ffffff;
@@ -84,7 +93,7 @@ h2 {
     color: #dddddd;
     background-color: #252525;
     min-height: 100px;
-    min-width: 450px;
+    min-width: 400px;
     max-width: 550px;
     padding: 25px;
     border-radius: 4px;
@@ -127,7 +136,6 @@ h2 {
 
 .contact-detail {
     text-align: center;
-    align-content: space-between;
 }
 
 .pic {
@@ -148,7 +156,7 @@ a .github :visited {
 }
 
 .github :hover {
-    color: #6e5494;
+    color: #c9510c;
 }
 
 .facebook :link {
@@ -164,7 +172,7 @@ a .facebook :visited {
 }
 
 :hover {
-    transition: 450ms
+    transition: 300ms
 }
 
 .linkedin :link {

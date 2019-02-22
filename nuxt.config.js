@@ -48,7 +48,10 @@ module.exports = {
 
   axios: {
     // proxyHeaders: false
-  }
+  },
+  css: [
+    '@fortawesome/fontawesome/styles.css',
+  ]
 
 }
 
